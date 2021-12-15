@@ -1,0 +1,77 @@
+body {
+  background-color: #5B5164;
+  font-family: "Arial", sans-serif;
+}
+
+.todo-wrapper {
+  height: 100vh;
+  text-align: center;
+}
+.todo-wrapper h1 {
+  color: white;
+}
+.todo-wrapper .tasks-wrapper {
+  margin-top: 50px;
+}
+.todo-wrapper .tasks-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.todo-wrapper .tasks-container input[type=text], .todo-wrapper .tasks-container p {
+  min-width: 500px;
+  color: white;
+  margin: 0;
+  padding: 20px;
+  word-break: break-all;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+}
+.todo-wrapper .tasks-container input[type=text] input, .todo-wrapper .tasks-container p input {
+  height: 30px;
+  width: 30px;
+  margin-right: auto;
+}
+.todo-wrapper .tasks-container input[type=text] {
+  border: 2px solid transparent;
+}
+.todo-wrapper .tasks-container input[type=text]:focus-visible {
+  border-color: #5072ba;
+  outline: none;
+}
+.todo-wrapper .tasks-container button {
+  padding: 10px;
+  width: 80px;
+  border: 2px solid transparent;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.todo-wrapper .finished {
+  text-decoration: line-through;
+}
+.todo-wrapper .add-task input {
+  width: 350px;
+  padding: 10px;
+  border: 2px solid #802fb2;
+}
+.todo-wrapper .add-task input:focus-visible {
+  border-color: #5072ba;
+  outline: none;
+}
+.todo-wrapper .add-task button {
+  touch-action: manipulation;
+  user-select: none;
+  cursor: pointer;
+  padding: 12px 30px;
+  border: 0;
+  color: white;
+  background: linear-gradient(54.7deg, #960ead 12%, #0ad8c7 100%);
+}
+.todo-wrapper .no-todo {
+  text-transform: uppercase;
+  padding: 10px;
+  background-color: #835151;
+}
