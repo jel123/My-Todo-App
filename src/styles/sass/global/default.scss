@@ -14,6 +14,20 @@ body {
     .tasks-wrapper {
         margin-top: 50px;
     }
+    
+    .filter-wrapper {
+        margin-top: 20px;
+        color: white;
+        
+        label {
+            font-weight: bold;
+        }
+
+        select {
+            width: 200px;
+            padding: 10px;
+        }
+    }
 
     .tasks-container {
         display: flex;

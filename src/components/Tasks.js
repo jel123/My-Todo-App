@@ -25,7 +25,7 @@ function Tasks({ todos, onFinish, onEdit, saveItem, editItem, deleteItem }) {
               <input
                 type="checkbox"
                 onClick={(e) => onFinish(index, e)}
-                checked={todo.isFinished ? true : false}
+                defaultChecked={todo.isFinished}
               />
               {todo.task}
             </p>
