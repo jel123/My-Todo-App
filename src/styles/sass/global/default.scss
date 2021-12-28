@@ -14,7 +14,36 @@ body {
     .tasks-wrapper {
         margin-top: 50px;
     }
+    .progress-wrapper {
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        .progress-label {
+            color: white;
+            text-transform: uppercase;
+            padding-bottom: 20px;
+            display: block;
+        }
+
+        .progress-gray {
+            background-color: gray;
+            height: 30px;
+            position: relative;
+
+            .percentage-text {
+                position: absolute;
+                transform: translate(-50%, -50%);
+                top: 50%;
+                left: 50%;
+            }
     
+            .progress-green {
+                background-color: green;
+                height: 30px;
+            }
+        }
+    }
+
     .filter-wrapper {
         margin-top: 20px;
         color: white;

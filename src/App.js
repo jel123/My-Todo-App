@@ -2,11 +2,13 @@ import InputForm from "./components/InputForm";
 import Tasks from "./components/Tasks";
 import React, { useState, useEffect } from "react";
 import Filter from "./components/Filter";
+import ProgressBar from "./components/ProgressBar";
 
 function App() {
   const items = JSON.parse(localStorage.getItem("item")) || [];
   const [todo, setTodo] = useState();
   const [todos, setTodos] = useState(items);
+  const [completion, setCompletion] = useState();
   const [filter, setFilter] = useState("all");
   const inputHandler = (e) => {
     setTodo(e.target.value);
@@ -58,7 +60,6 @@ function App() {
   };
 
   const onFinish = (index, e) => {
-    console.log(e.target.checked);
     items[index].isFinished = e.target.checked;
     localStorage.setItem("item", JSON.stringify(items));
     const finsishedItems = JSON.parse(localStorage.getItem("item")) || [];
@@ -67,6 +68,15 @@ function App() {
   
   const filterHandler = (e) => {
     setFilter(e.target.value);
+  }
+
+  const completionChecker = () => {
+    let itemsLength = items.length;
+    let itemsFinished = items.filter((items)=>{
+      return items.isFinished
+    });
+    let totalFinished = Math.ceil((itemsFinished.length / itemsLength) * 100);
+    setCompletion(totalFinished);
   }
 
   useEffect(() => { 
@@ -82,16 +92,20 @@ function App() {
     } else {
       todoFilter = items;
     }
-    console.log(todoFilter);
     setTodos(todoFilter);
   }, [filter])
 
+  useEffect(()=>{
+    completionChecker();
+  }, [items]);
+  
   return (
     <div className="App">
       <div className="todo-wrapper">
         <h1> What do you want to do today? </h1>
         <InputForm onClick={inputHandler} onAdd={addHandler} todo={todo} />
         <Filter filterHandler={filterHandler}/>
+        <ProgressBar completion={completion}/>
         {todos.length !== 0 ? (
           <Tasks
             todos={todos}

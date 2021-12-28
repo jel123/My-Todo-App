@@ -13,6 +13,31 @@ body {
 .todo-wrapper .tasks-wrapper {
   margin-top: 50px;
 }
+.todo-wrapper .progress-wrapper {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.todo-wrapper .progress-wrapper .progress-label {
+  color: white;
+  text-transform: uppercase;
+  padding-bottom: 20px;
+  display: block;
+}
+.todo-wrapper .progress-wrapper .progress-gray {
+  background-color: gray;
+  height: 30px;
+  position: relative;
+}
+.todo-wrapper .progress-wrapper .progress-gray .percentage-text {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+.todo-wrapper .progress-wrapper .progress-gray .progress-green {
+  background-color: green;
+  height: 30px;
+}
 .todo-wrapper .filter-wrapper {
   margin-top: 20px;
   color: white;
