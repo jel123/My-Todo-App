@@ -76,6 +76,9 @@ function App() {
       return items.isFinished
     });
     let totalFinished = Math.ceil((itemsFinished.length / itemsLength) * 100);
+    if(Number.isNaN(totalFinished)) {
+      totalFinished = 0;
+    }
     setCompletion(totalFinished);
   }
 
